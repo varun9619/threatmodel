@@ -357,7 +357,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Boundary",
-              "name": "Trust Boundary",
+              "name": "Internet Boundary",
               "description": "",
               "isTrustBoundary": true,
               "hasOpenThreats": false,
@@ -365,7 +365,7 @@
               "containedElements": []
             },
             "labels": [
-              "Trust Boundary"
+              "Internet Boundary"
             ],
             "id": "050f46f4-6d07-4866-9626-6553d33105be",
             "source": {
@@ -386,7 +386,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Boundary",
-              "name": "Trust Boundary",
+              "name": "Internal Network Boundary",
               "description": "",
               "isTrustBoundary": true,
               "hasOpenThreats": false,
@@ -394,7 +394,7 @@
               "containedElements": []
             },
             "labels": [
-              "Trust Boundary"
+              "Internal Network Boundary"
             ],
             "id": "1ae25ac1-be00-423f-b9fd-e61dbb084eaf",
             "source": {
@@ -408,14 +408,17 @@
           },
           {
             "position": {
-              "x": 105,
+              "x": 57.5,
               "y": 240
             },
             "size": {
-              "width": 112.5,
+              "width": 160,
               "height": 60
             },
             "attrs": {
+              "text": {
+                "text": "Customer Browser"
+              },
               "body": {
                 "stroke": "#333333",
                 "strokeWidth": 1.5,
@@ -424,6 +427,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 2,
             "ports": {
               "groups": {
                 "top": {
@@ -507,10 +511,9 @@
               ]
             },
             "id": "7b5d9408-d263-4950-9d7e-fd681a0506fe",
-            "zIndex": 2,
             "data": {
               "type": "tm.Actor",
-              "name": "Actor",
+              "name": "Customer Browser",
               "description": "",
               "isTrustBoundary": false,
               "outOfScope": false,
@@ -530,6 +533,9 @@
               "height": 60
             },
             "attrs": {
+              "text": {
+                "text": "Relational Database (PostgreSQL)"
+              },
               "topLine": {
                 "strokeWidth": 1.5,
                 "strokeDasharray": null
@@ -541,6 +547,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 3,
             "ports": {
               "groups": {
                 "top": {
@@ -624,10 +631,9 @@
               ]
             },
             "id": "086c7e52-079a-4ebe-aa40-f7f1a21f9ff4",
-            "zIndex": 3,
             "data": {
               "type": "tm.Store",
-              "name": "Store",
+              "name": "Relational Database (PostgreSQL)",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -651,6 +657,9 @@
               "height": 60
             },
             "attrs": {
+              "text": {
+                "text": "REST API Backend (Node.js)"
+              },
               "body": {
                 "stroke": "#333333",
                 "strokeWidth": 1.5,
@@ -659,6 +668,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 4,
             "ports": {
               "groups": {
                 "top": {
@@ -742,10 +752,9 @@
               ]
             },
             "id": "94f7ccda-536e-48b9-a654-df42bc44a050",
-            "zIndex": 4,
             "data": {
               "type": "tm.Process",
-              "name": "Process",
+              "name": "REST API Backend (Node.js)",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -778,7 +787,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Data Flow",
+              "name": "User Credentials & Checkout",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -792,7 +801,7 @@
               "trustBoundaryIds": []
             },
             "labels": [
-              "Data Flow"
+              "User Credentials & Checkout"
             ],
             "id": "5941a72d-eca2-4ee9-b74d-ab254ec116ca",
             "source": {
@@ -805,7 +814,11 @@
             },
             "vertices": [
               {
-                "x": 390,
+                "x": 360,
+                "y": 180
+              },
+              {
+                "x": 410,
                 "y": 180
               }
             ]
@@ -857,140 +870,122 @@
             },
             "vertices": [
               {
+                "x": 830,
+                "y": 190
+              },
+              {
                 "x": 840,
                 "y": 190
               }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Session Tokens & Product Catalog",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Session Tokens & Product Catalog"
             ],
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead"
-              ],
-              "name": null
-            }
+            "id": "3c4810a0-0d47-479f-a6ef-2d369e15ede7",
+            "source": {
+              "x": 596,
+              "y": 300
+            },
+            "target": {
+              "cell": "7b5d9408-d263-4950-9d7e-fd681a0506fe",
+              "port": "4169f8af-7c81-454e-b166-4eaf071c37cd"
+            },
+            "vertices": [
+              {
+                "x": 390,
+                "y": 400
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Query Results (Password Hashes)",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Query Results (Password Hashes)"
+            ],
+            "id": "81ecabac-03ca-431b-86fe-554e3092412a",
+            "source": {
+              "x": 1087,
+              "y": 300
+            },
+            "target": {
+              "cell": "94f7ccda-536e-48b9-a654-df42bc44a050",
+              "port": "f9bf7f44-a1f1-4e1f-b512-3c7c48898d3f"
+            },
+            "vertices": [
+              {
+                "x": 860,
+                "y": 380
+              },
+              {
+                "x": 840,
+                "y": 380
+              }
+            ]
           }
         ],
         "description": "Three tier component breakdown"
