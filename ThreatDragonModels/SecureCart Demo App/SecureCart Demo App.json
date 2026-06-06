@@ -291,7 +291,7 @@
                   "name": "block"
                 },
                 "sourceMarker": {
-                  "name": ""
+                  "name": "block"
                 },
                 "strokeDasharray": null
               }
@@ -308,7 +308,7 @@
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
-              "isBidirectional": false,
+              "isBidirectional": true,
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
@@ -328,6 +328,10 @@
               "port": "24d20fb4-0da5-4302-8b2f-87c391ba5d32"
             },
             "vertices": [
+              {
+                "x": 270,
+                "y": 170
+              },
               {
                 "x": 370,
                 "y": 120
