@@ -66,6 +66,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 1,
             "ports": {
               "groups": {
                 "top": {
@@ -149,7 +150,6 @@
               ]
             },
             "id": "55b72bfd-55a6-4e8b-82b6-4be23f1e43ea",
-            "zIndex": 1,
             "data": {
               "type": "tm.Process",
               "name": "SecureCart E-Commerce App",
@@ -186,6 +186,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 2,
             "ports": {
               "groups": {
                 "top": {
@@ -269,7 +270,6 @@
               ]
             },
             "id": "a95d91c9-9901-4be1-adb7-f05e1c587ca5",
-            "zIndex": 2,
             "data": {
               "type": "tm.Actor",
               "name": "Customer Browser",
@@ -302,7 +302,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "HTTPS Responses (HTML/JSON)",
+              "name": "HTTPS Request / Responses (HTML/JSON)",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -316,21 +316,25 @@
               "trustBoundaryIds": []
             },
             "labels": [
-              "HTTPS Responses (HTML/JSON)"
+              "HTTPS Request / Responses (HTML/JSON)"
             ],
-            "id": "93aeafff-6c6e-47b5-8864-7a9b041fb2bc",
+            "id": "024700fe-7a6e-4443-a243-b8ffc87fb61c",
             "source": {
-              "x": 410,
-              "y": 430
+              "x": 193,
+              "y": 210
             },
             "target": {
-              "cell": "a95d91c9-9901-4be1-adb7-f05e1c587ca5",
-              "port": "b0a41589-5c01-4a60-8dc3-253d3c1b785e"
+              "cell": "55b72bfd-55a6-4e8b-82b6-4be23f1e43ea",
+              "port": "24d20fb4-0da5-4302-8b2f-87c391ba5d32"
             },
             "vertices": [
               {
-                "x": 220,
-                "y": 290
+                "x": 370,
+                "y": 120
+              },
+              {
+                "x": 420,
+                "y": 120
               }
             ]
           }
